@@ -1,18 +1,18 @@
-// Copyright 2021 The go-ethereum Authors
-// This file is part of the go-ethereum library.
+// Copyright 2021 The go-gamefin Authors
+// This file is part of the go-gamefin library.
 //
-// The go-ethereum library is free software: you can redistribute it and/or modify
+// The go-gamefin library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-ethereum library is distributed in the hope that it will be useful,
+// The go-gamefin library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-gamefin library. If not, see <http://www.gnu.org/licenses/>.
 
 package tracetest
 
@@ -26,22 +26,22 @@ import (
 	"testing"
 	"unicode"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/eth/tracers"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/ethereum/go-ethereum/tests"
+	"github.com/gameconnection/gamefin_network/common"
+	"github.com/gameconnection/gamefin_network/common/hexutil"
+	"github.com/gameconnection/gamefin_network/common/math"
+	"github.com/gameconnection/gamefin_network/core"
+	"github.com/gameconnection/gamefin_network/core/rawdb"
+	"github.com/gameconnection/gamefin_network/core/types"
+	"github.com/gameconnection/gamefin_network/core/vm"
+	"github.com/gameconnection/gamefin_network/crypto"
+	"github.com/gameconnection/gamefin_network/eth/tracers"
+	"github.com/gameconnection/gamefin_network/params"
+	"github.com/gameconnection/gamefin_network/rlp"
+	"github.com/gameconnection/gamefin_network/tests"
 
 	// Force-load native and js pacakges, to trigger registration
-	_ "github.com/ethereum/go-ethereum/eth/tracers/js"
-	_ "github.com/ethereum/go-ethereum/eth/tracers/native"
+	_ "github.com/gameconnection/gamefin_network/eth/tracers/js"
+	_ "github.com/gameconnection/gamefin_network/eth/tracers/native"
 )
 
 // To generate a new callTracer test, copy paste the makeTest method below into

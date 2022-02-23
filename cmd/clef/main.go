@@ -1,18 +1,18 @@
-// Copyright 2018 The go-ethereum Authors
-// This file is part of go-ethereum.
+// Copyright 2018 The go-gamefin Authors
+// This file is part of go-gamefin.
 //
-// go-ethereum is free software: you can redistribute it and/or modify
+// go-gamefin is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// go-ethereum is distributed in the hope that it will be useful,
+// go-gamefin is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with go-ethereum. If not, see <http://www.gnu.org/licenses/>.
+// along with go-gamefin. If not, see <http://www.gnu.org/licenses/>.
 
 package main
 
@@ -35,25 +35,25 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/internal/flags"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/ethereum/go-ethereum/signer/core"
-	"github.com/ethereum/go-ethereum/signer/core/apitypes"
-	"github.com/ethereum/go-ethereum/signer/fourbyte"
-	"github.com/ethereum/go-ethereum/signer/rules"
-	"github.com/ethereum/go-ethereum/signer/storage"
+	"github.com/gameconnection/gamefin_network/accounts"
+	"github.com/gameconnection/gamefin_network/accounts/keystore"
+	"github.com/gameconnection/gamefin_network/cmd/utils"
+	"github.com/gameconnection/gamefin_network/common"
+	"github.com/gameconnection/gamefin_network/common/hexutil"
+	"github.com/gameconnection/gamefin_network/core/types"
+	"github.com/gameconnection/gamefin_network/crypto"
+	"github.com/gameconnection/gamefin_network/internal/ethapi"
+	"github.com/gameconnection/gamefin_network/internal/flags"
+	"github.com/gameconnection/gamefin_network/log"
+	"github.com/gameconnection/gamefin_network/node"
+	"github.com/gameconnection/gamefin_network/params"
+	"github.com/gameconnection/gamefin_network/rlp"
+	"github.com/gameconnection/gamefin_network/rpc"
+	"github.com/gameconnection/gamefin_network/signer/core"
+	"github.com/gameconnection/gamefin_network/signer/core/apitypes"
+	"github.com/gameconnection/gamefin_network/signer/fourbyte"
+	"github.com/gameconnection/gamefin_network/signer/rules"
+	"github.com/gameconnection/gamefin_network/signer/storage"
 	"github.com/mattn/go-colorable"
 	"github.com/mattn/go-isatty"
 	"gopkg.in/urfave/cli.v1"
@@ -249,7 +249,7 @@ var AppHelpFlagGroups = []flags.FlagGroup{
 
 func init() {
 	app.Name = "Clef"
-	app.Usage = "Manage Ethereum account operations"
+	app.Usage = "Manage Gamefin account operations"
 	app.Flags = []cli.Flag{
 		logLevelFlag,
 		keystoreFlag,
@@ -795,7 +795,7 @@ func checkFile(filename string) error {
 	}
 	// Check the unix permission bits
 	// However, on windows, we cannot use the unix perm-bits, see
-	// https://github.com/ethereum/go-ethereum/issues/20123
+	// https://github.com/gameconnection/gamefin_network/issues/20123
 	if runtime.GOOS != "windows" && info.Mode().Perm()&0377 != 0 {
 		return fmt.Errorf("file (%v) has insecure file permissions (%v)", filename, info.Mode().String())
 	}

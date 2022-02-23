@@ -1,18 +1,18 @@
-// Copyright 2021 The go-ethereum Authors
-// This file is part of the go-ethereum library.
+// Copyright 2021 The go-gamefin Authors
+// This file is part of the go-gamefin library.
 //
-// The go-ethereum library is free software: you can redistribute it and/or modify
+// The go-gamefin library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-ethereum library is distributed in the hope that it will be useful,
+// The go-gamefin library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-gamefin library. If not, see <http://www.gnu.org/licenses/>.
 
 package eth
 
@@ -21,13 +21,13 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/state"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/trie"
+	"github.com/gameconnection/gamefin_network/common"
+	"github.com/gameconnection/gamefin_network/core"
+	"github.com/gameconnection/gamefin_network/core/state"
+	"github.com/gameconnection/gamefin_network/core/types"
+	"github.com/gameconnection/gamefin_network/core/vm"
+	"github.com/gameconnection/gamefin_network/log"
+	"github.com/gameconnection/gamefin_network/trie"
 )
 
 // StateAtBlock retrieves the state database associated with a certain block.
@@ -45,7 +45,7 @@ import (
 //        storing trash persistently
 // - preferDisk: this arg can be used by the caller to signal that even though the 'base' is provided,
 //        it would be preferrable to start from a fresh state, if we have it on disk.
-func (eth *Ethereum) StateAtBlock(block *types.Block, reexec uint64, base *state.StateDB, checkLive bool, preferDisk bool) (statedb *state.StateDB, err error) {
+func (eth *Gamefin) StateAtBlock(block *types.Block, reexec uint64, base *state.StateDB, checkLive bool, preferDisk bool) (statedb *state.StateDB, err error) {
 	var (
 		current  *types.Block
 		database state.Database
@@ -159,7 +159,7 @@ func (eth *Ethereum) StateAtBlock(block *types.Block, reexec uint64, base *state
 }
 
 // stateAtTransaction returns the execution environment of a certain transaction.
-func (eth *Ethereum) stateAtTransaction(block *types.Block, txIndex int, reexec uint64) (core.Message, vm.BlockContext, *state.StateDB, error) {
+func (eth *Gamefin) stateAtTransaction(block *types.Block, txIndex int, reexec uint64) (core.Message, vm.BlockContext, *state.StateDB, error) {
 	// Short circuit if it's genesis block.
 	if block.NumberU64() == 0 {
 		return nil, vm.BlockContext{}, nil, errors.New("no transaction in genesis")

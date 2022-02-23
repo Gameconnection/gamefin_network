@@ -1,18 +1,18 @@
-// Copyright 2021 The go-ethereum Authors
-// This file is part of the go-ethereum library.
+// Copyright 2021 The go-gamefin Authors
+// This file is part of the go-gamefin library.
 //
-// The go-ethereum library is free software: you can redistribute it and/or modify
+// The go-gamefin library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-ethereum library is distributed in the hope that it will be useful,
+// The go-gamefin library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-gamefin library. If not, see <http://www.gnu.org/licenses/>.
 
 // This file contains a miner stress test for the eth1/2 transition
 package main
@@ -27,24 +27,24 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/fdlimit"
-	"github.com/ethereum/go-ethereum/consensus/ethash"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/eth"
-	"github.com/ethereum/go-ethereum/eth/catalyst"
-	"github.com/ethereum/go-ethereum/eth/downloader"
-	"github.com/ethereum/go-ethereum/eth/ethconfig"
-	"github.com/ethereum/go-ethereum/les"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/miner"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/gameconnection/gamefin_network/accounts/keystore"
+	"github.com/gameconnection/gamefin_network/common"
+	"github.com/gameconnection/gamefin_network/common/fdlimit"
+	"github.com/gameconnection/gamefin_network/consensus/ethash"
+	"github.com/gameconnection/gamefin_network/core"
+	"github.com/gameconnection/gamefin_network/core/types"
+	"github.com/gameconnection/gamefin_network/crypto"
+	"github.com/gameconnection/gamefin_network/eth"
+	"github.com/gameconnection/gamefin_network/eth/catalyst"
+	"github.com/gameconnection/gamefin_network/eth/downloader"
+	"github.com/gameconnection/gamefin_network/eth/ethconfig"
+	"github.com/gameconnection/gamefin_network/les"
+	"github.com/gameconnection/gamefin_network/log"
+	"github.com/gameconnection/gamefin_network/miner"
+	"github.com/gameconnection/gamefin_network/node"
+	"github.com/gameconnection/gamefin_network/p2p"
+	"github.com/gameconnection/gamefin_network/p2p/enode"
+	"github.com/gameconnection/gamefin_network/params"
 )
 
 type nodetype int
@@ -89,8 +89,8 @@ var (
 type ethNode struct {
 	typ        nodetype
 	api        *catalyst.ConsensusAPI
-	ethBackend *eth.Ethereum
-	lesBackend *les.LightEthereum
+	ethBackend *eth.Gamefin
+	lesBackend *les.LightGamefin
 	stack      *node.Node
 	enode      *enode.Node
 }
@@ -100,8 +100,8 @@ func newNode(typ nodetype, genesis *core.Genesis, enodes []*enode.Node) *ethNode
 		err        error
 		api        *catalyst.ConsensusAPI
 		stack      *node.Node
-		ethBackend *eth.Ethereum
-		lesBackend *les.LightEthereum
+		ethBackend *eth.Gamefin
+		lesBackend *les.LightGamefin
 	)
 	// Start the node and wait until it's up
 	if typ == eth2LightClient {
@@ -435,8 +435,8 @@ func makeGenesis(faucets []*ecdsa.PrivateKey) *core.Genesis {
 	return genesis
 }
 
-func makeFullNode(genesis *core.Genesis) (*node.Node, *eth.Ethereum, *catalyst.ConsensusAPI, error) {
-	// Define the basic configurations for the Ethereum node
+func makeFullNode(genesis *core.Genesis) (*node.Node, *eth.Gamefin, *catalyst.ConsensusAPI, error) {
+	// Define the basic configurations for the Gamefin node
 	datadir, _ := ioutil.TempDir("", "")
 
 	config := &node.Config{
@@ -450,7 +450,7 @@ func makeFullNode(genesis *core.Genesis) (*node.Node, *eth.Ethereum, *catalyst.C
 		},
 		UseLightweightKDF: true,
 	}
-	// Create the node and configure a full Ethereum node on it
+	// Create the node and configure a full Gamefin node on it
 	stack, err := node.New(config)
 	if err != nil {
 		return nil, nil, nil, err
@@ -486,8 +486,8 @@ func makeFullNode(genesis *core.Genesis) (*node.Node, *eth.Ethereum, *catalyst.C
 	return stack, ethBackend, catalyst.NewConsensusAPI(ethBackend, nil), err
 }
 
-func makeLightNode(genesis *core.Genesis) (*node.Node, *les.LightEthereum, *catalyst.ConsensusAPI, error) {
-	// Define the basic configurations for the Ethereum node
+func makeLightNode(genesis *core.Genesis) (*node.Node, *les.LightGamefin, *catalyst.ConsensusAPI, error) {
+	// Define the basic configurations for the Gamefin node
 	datadir, _ := ioutil.TempDir("", "")
 
 	config := &node.Config{
@@ -501,7 +501,7 @@ func makeLightNode(genesis *core.Genesis) (*node.Node, *les.LightEthereum, *cata
 		},
 		UseLightweightKDF: true,
 	}
-	// Create the node and configure a full Ethereum node on it
+	// Create the node and configure a full Gamefin node on it
 	stack, err := node.New(config)
 	if err != nil {
 		return nil, nil, nil, err

@@ -1,4 +1,4 @@
-module github.com/ethereum/go-ethereum
+module github.com/gameconnection/gamefin_network
 
 go 1.15
 

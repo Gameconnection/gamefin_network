@@ -1,18 +1,18 @@
-// Copyright 2015 The go-ethereum Authors
-// This file is part of the go-ethereum library.
+// Copyright 2015 The go-gamefin Authors
+// This file is part of the go-gamefin library.
 //
-// The go-ethereum library is free software: you can redistribute it and/or modify
+// The go-gamefin library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-ethereum library is distributed in the hope that it will be useful,
+// The go-gamefin library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-gamefin library. If not, see <http://www.gnu.org/licenses/>.
 
 package runtime
 
@@ -24,21 +24,21 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/accounts/abi"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/asm"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/state"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/eth/tracers"
-	"github.com/ethereum/go-ethereum/eth/tracers/logger"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/gameconnection/gamefin_network/accounts/abi"
+	"github.com/gameconnection/gamefin_network/common"
+	"github.com/gameconnection/gamefin_network/consensus"
+	"github.com/gameconnection/gamefin_network/core"
+	"github.com/gameconnection/gamefin_network/core/asm"
+	"github.com/gameconnection/gamefin_network/core/rawdb"
+	"github.com/gameconnection/gamefin_network/core/state"
+	"github.com/gameconnection/gamefin_network/core/types"
+	"github.com/gameconnection/gamefin_network/core/vm"
+	"github.com/gameconnection/gamefin_network/eth/tracers"
+	"github.com/gameconnection/gamefin_network/eth/tracers/logger"
+	"github.com/gameconnection/gamefin_network/params"
 
 	// force-load js tracers to trigger registration
-	_ "github.com/ethereum/go-ethereum/eth/tracers/js"
+	_ "github.com/gameconnection/gamefin_network/eth/tracers/js"
 )
 
 func TestDefaults(t *testing.T) {
@@ -626,7 +626,7 @@ func TestEip2929Cases(t *testing.T) {
 
 // TestColdAccountAccessCost test that the cold account access cost is reported
 // correctly
-// see: https://github.com/ethereum/go-ethereum/issues/22649
+// see: https://github.com/gameconnection/gamefin_network/issues/22649
 func TestColdAccountAccessCost(t *testing.T) {
 	for i, tc := range []struct {
 		code []byte

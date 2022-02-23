@@ -1,18 +1,18 @@
-// Copyright 2016 The go-ethereum Authors
-// This file is part of go-ethereum.
+// Copyright 2016 The go-gamefin Authors
+// This file is part of go-gamefin.
 //
-// go-ethereum is free software: you can redistribute it and/or modify
+// go-gamefin is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// go-ethereum is distributed in the hope that it will be useful,
+// go-gamefin is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with go-ethereum. If not, see <http://www.gnu.org/licenses/>.
+// along with go-gamefin. If not, see <http://www.gnu.org/licenses/>.
 
 package main
 
@@ -22,10 +22,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/console"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/gameconnection/gamefin_network/cmd/utils"
+	"github.com/gameconnection/gamefin_network/console"
+	"github.com/gameconnection/gamefin_network/node"
+	"github.com/gameconnection/gamefin_network/rpc"
 	"gopkg.in/urfave/cli.v1"
 )
 
@@ -41,7 +41,7 @@ var (
 		Description: `
 The Geth console is an interactive shell for the JavaScript runtime environment
 which exposes a node admin interface as well as the Ðapp JavaScript API.
-See https://geth.ethereum.org/docs/interface/javascript-console.`,
+See https://geth.gamefin.org/docs/interface/javascript-console.`,
 	}
 
 	attachCommand = cli.Command{
@@ -54,7 +54,7 @@ See https://geth.ethereum.org/docs/interface/javascript-console.`,
 		Description: `
 The Geth console is an interactive shell for the JavaScript runtime environment
 which exposes a node admin interface as well as the Ðapp JavaScript API.
-See https://geth.ethereum.org/docs/interface/javascript-console.
+See https://geth.gamefin.org/docs/interface/javascript-console.
 This command allows to open a console on a running geth node.`,
 	}
 
@@ -67,7 +67,7 @@ This command allows to open a console on a running geth node.`,
 		Category:  "CONSOLE COMMANDS",
 		Description: `
 The JavaScript VM exposes a node admin interface as well as the Ðapp
-JavaScript API. See https://geth.ethereum.org/docs/interface/javascript-console`,
+JavaScript API. See https://geth.gamefin.org/docs/interface/javascript-console`,
 	}
 )
 

@@ -96,17 +96,17 @@ const (
 	MessageType_MessageType_DebugLinkMemory      MessageType = 111
 	MessageType_MessageType_DebugLinkMemoryWrite MessageType = 112
 	MessageType_MessageType_DebugLinkFlashErase  MessageType = 113
-	// Ethereum
-	MessageType_MessageType_EthereumGetPublicKey     MessageType = 450
-	MessageType_MessageType_EthereumPublicKey        MessageType = 451
-	MessageType_MessageType_EthereumGetAddress       MessageType = 56
-	MessageType_MessageType_EthereumAddress          MessageType = 57
-	MessageType_MessageType_EthereumSignTx           MessageType = 58
-	MessageType_MessageType_EthereumTxRequest        MessageType = 59
-	MessageType_MessageType_EthereumTxAck            MessageType = 60
-	MessageType_MessageType_EthereumSignMessage      MessageType = 64
-	MessageType_MessageType_EthereumVerifyMessage    MessageType = 65
-	MessageType_MessageType_EthereumMessageSignature MessageType = 66
+	// Gamefin
+	MessageType_MessageType_GamefinGetPublicKey     MessageType = 450
+	MessageType_MessageType_GamefinPublicKey        MessageType = 451
+	MessageType_MessageType_GamefinGetAddress       MessageType = 56
+	MessageType_MessageType_GamefinAddress          MessageType = 57
+	MessageType_MessageType_GamefinSignTx           MessageType = 58
+	MessageType_MessageType_GamefinTxRequest        MessageType = 59
+	MessageType_MessageType_GamefinTxAck            MessageType = 60
+	MessageType_MessageType_GamefinSignMessage      MessageType = 64
+	MessageType_MessageType_GamefinVerifyMessage    MessageType = 65
+	MessageType_MessageType_GamefinMessageSignature MessageType = 66
 	// NEM
 	MessageType_MessageType_NEMGetAddress       MessageType = 67
 	MessageType_MessageType_NEMAddress          MessageType = 68
@@ -306,16 +306,16 @@ var MessageType_name = map[int32]string{
 	111: "MessageType_DebugLinkMemory",
 	112: "MessageType_DebugLinkMemoryWrite",
 	113: "MessageType_DebugLinkFlashErase",
-	450: "MessageType_EthereumGetPublicKey",
-	451: "MessageType_EthereumPublicKey",
-	56:  "MessageType_EthereumGetAddress",
-	57:  "MessageType_EthereumAddress",
-	58:  "MessageType_EthereumSignTx",
-	59:  "MessageType_EthereumTxRequest",
-	60:  "MessageType_EthereumTxAck",
-	64:  "MessageType_EthereumSignMessage",
-	65:  "MessageType_EthereumVerifyMessage",
-	66:  "MessageType_EthereumMessageSignature",
+	450: "MessageType_GamefinGetPublicKey",
+	451: "MessageType_GamefinPublicKey",
+	56:  "MessageType_GamefinGetAddress",
+	57:  "MessageType_GamefinAddress",
+	58:  "MessageType_GamefinSignTx",
+	59:  "MessageType_GamefinTxRequest",
+	60:  "MessageType_GamefinTxAck",
+	64:  "MessageType_GamefinSignMessage",
+	65:  "MessageType_GamefinVerifyMessage",
+	66:  "MessageType_GamefinMessageSignature",
 	67:  "MessageType_NEMGetAddress",
 	68:  "MessageType_NEMAddress",
 	69:  "MessageType_NEMSignTx",
@@ -502,16 +502,16 @@ var MessageType_value = map[string]int32{
 	"MessageType_DebugLinkMemory":                           111,
 	"MessageType_DebugLinkMemoryWrite":                      112,
 	"MessageType_DebugLinkFlashErase":                       113,
-	"MessageType_EthereumGetPublicKey":                      450,
-	"MessageType_EthereumPublicKey":                         451,
-	"MessageType_EthereumGetAddress":                        56,
-	"MessageType_EthereumAddress":                           57,
-	"MessageType_EthereumSignTx":                            58,
-	"MessageType_EthereumTxRequest":                         59,
-	"MessageType_EthereumTxAck":                             60,
-	"MessageType_EthereumSignMessage":                       64,
-	"MessageType_EthereumVerifyMessage":                     65,
-	"MessageType_EthereumMessageSignature":                  66,
+	"MessageType_GamefinGetPublicKey":                      450,
+	"MessageType_GamefinPublicKey":                         451,
+	"MessageType_GamefinGetAddress":                        56,
+	"MessageType_GamefinAddress":                           57,
+	"MessageType_GamefinSignTx":                            58,
+	"MessageType_GamefinTxRequest":                         59,
+	"MessageType_GamefinTxAck":                             60,
+	"MessageType_GamefinSignMessage":                       64,
+	"MessageType_GamefinVerifyMessage":                     65,
+	"MessageType_GamefinMessageSignature":                  66,
 	"MessageType_NEMGetAddress":                             67,
 	"MessageType_NEMAddress":                                68,
 	"MessageType_NEMSignTx":                                 69,
