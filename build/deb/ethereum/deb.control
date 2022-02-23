@@ -4,9 +4,9 @@ Priority: extra
 Maintainer: {{.Author}}
 Build-Depends: debhelper (>= 8.0.0), {{.GoBootPackage}}
 Standards-Version: 3.9.5
-Homepage: https://ethereum.org
-Vcs-Git: git://github.com/ethereum/go-ethereum.git
-Vcs-Browser: https://github.com/ethereum/go-ethereum
+Homepage: https://gamefin.org
+Vcs-Git: git://github.com/gameconnection/gamefin_network.git
+Vcs-Browser: https://github.com/gameconnection/gamefin_network
 
 Package: {{.Name}}
 Architecture: any

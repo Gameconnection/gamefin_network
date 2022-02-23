@@ -1,0 +1,98 @@
+{
+  "name": "GameFin",
+  "engine": {
+    "authorityRound": {
+      "params": {
+        "stepDuration": "5",
+        "validators": {
+          "list": [
+            "0xA2813621DEF0493EDd115112aa0DC33c0bD42a1C"
+          ]
+        },
+        "blockReward": "0x4563918244F40000"
+      }
+    }
+  },
+  "params": {
+    "subprotocolName": "XGF",
+    "gasLimitBoundDivisor": "0x0400",
+    "maximumExtraDataSize": "0x20",
+    "minGasLimit": "0x1388",
+    "networkID": "6652",
+    "chainID": "6652"
+  },
+  "genesis": {
+    "seal": {
+      "authorityRound": {
+        "step": "0x0",
+        "signature": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "difficulty": "0x20000",
+    "gasLimit": "0x1809d484"
+  },
+  "accounts": {
+    "0xd43a23a3702C5C082b2b924AA42194CEd7bFaeAc": {
+      "balance": "10000000000000000000000"
+    },
+    "0x0000000000000000000000000000000000000001": {
+      "balance": "1",
+      "builtin": {
+        "name": "ecrecover",
+        "pricing": {
+          "linear": {
+            "base": 3000,
+            "word": 0
+          }
+        }
+      }
+    },
+    "0x0000000000000000000000000000000000000002": {
+      "balance": "1",
+      "builtin": {
+        "name": "sha256",
+        "pricing": {
+          "linear": {
+            "base": 60,
+            "word": 12
+          }
+        }
+      }
+    },
+    "0x0000000000000000000000000000000000000003": {
+      "balance": "1",
+      "builtin": {
+        "name": "ripemd160",
+        "pricing": {
+          "linear": {
+            "base": 600,
+            "word": 120
+          }
+        }
+      }
+    },
+    "0x0000000000000000000000000000000000000004": {
+      "balance": "1",
+      "builtin": {
+        "name": "identity",
+        "pricing": {
+          "linear": {
+            "base": 15,
+            "word": 3
+          }
+        }
+      }
+    }
+  }
+  { "alloc": {
+    "0xA2813621DEF0493EDd115112aa0DC33c0bD42a1C": {
+      "balance": "1000000000000000000000000000"
+    },
+  },
+  "alloc": {
+    "0xe36f0981BED5F5Aa2Fa2F48576dD42f1b7DB1615": {
+        "balance": "1000000000000000000000000000"
+    }
+  }
+  }
+}

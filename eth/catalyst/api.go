@@ -1,18 +1,18 @@
-// Copyright 2020 The go-ethereum Authors
-// This file is part of the go-ethereum library.
+// Copyright 2020 The go-gamefin Authors
+// This file is part of the go-gamefin library.
 //
-// The go-ethereum library is free software: you can redistribute it and/or modify
+// The go-gamefin library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-ethereum library is distributed in the hope that it will be useful,
+// The go-gamefin library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-gamefin library. If not, see <http://www.gnu.org/licenses/>.
 
 // Package catalyst implements the temporary eth1/eth2 RPC integration.
 package catalyst
@@ -24,15 +24,15 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/eth"
-	"github.com/ethereum/go-ethereum/les"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/ethereum/go-ethereum/trie"
+	"github.com/gameconnection/gamefin_network/common"
+	"github.com/gameconnection/gamefin_network/consensus"
+	"github.com/gameconnection/gamefin_network/core/types"
+	"github.com/gameconnection/gamefin_network/eth"
+	"github.com/gameconnection/gamefin_network/les"
+	"github.com/gameconnection/gamefin_network/log"
+	"github.com/gameconnection/gamefin_network/node"
+	"github.com/gameconnection/gamefin_network/rpc"
+	"github.com/gameconnection/gamefin_network/trie"
 )
 
 var (
@@ -46,7 +46,7 @@ var (
 )
 
 // Register adds catalyst APIs to the full node.
-func Register(stack *node.Node, backend *eth.Ethereum) error {
+func Register(stack *node.Node, backend *eth.Gamefin) error {
 	log.Warn("Catalyst mode enabled", "protocol", "eth")
 	stack.RegisterAPIs([]rpc.API{
 		{
@@ -60,7 +60,7 @@ func Register(stack *node.Node, backend *eth.Ethereum) error {
 }
 
 // RegisterLight adds catalyst APIs to the light client.
-func RegisterLight(stack *node.Node, backend *les.LightEthereum) error {
+func RegisterLight(stack *node.Node, backend *les.LightGamefin) error {
 	log.Warn("Catalyst mode enabled", "protocol", "les")
 	stack.RegisterAPIs([]rpc.API{
 		{
@@ -75,12 +75,12 @@ func RegisterLight(stack *node.Node, backend *les.LightEthereum) error {
 
 type ConsensusAPI struct {
 	light          bool
-	eth            *eth.Ethereum
-	les            *les.LightEthereum
+	eth            *eth.Gamefin
+	les            *les.LightGamefin
 	preparedBlocks *payloadQueue // preparedBlocks caches payloads (*ExecutableDataV1) by payload ID (PayloadID)
 }
 
-func NewConsensusAPI(eth *eth.Ethereum, les *les.LightEthereum) *ConsensusAPI {
+func NewConsensusAPI(eth *eth.Gamefin, les *les.LightGamefin) *ConsensusAPI {
 	if eth == nil {
 		if les.BlockChain().Config().TerminalTotalDifficulty == nil {
 			panic("Catalyst started without valid total difficulty")
